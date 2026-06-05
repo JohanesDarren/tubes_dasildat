@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - PlantSense AI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon"><i class="fas fa-leaf"></i></span>
+                <span class="brand-text">PlantSense AI</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a></li>
+                <li><a href="predict.html" class="nav-link">
+                    <i class="fas fa-microscope"></i> Predict
+                </a></li>
+                <li><a href="comparison.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i> Comparison
+                </a></li>
+                <li><a href="about.html" class="nav-link active">
+                    <i class="fas fa-users"></i> Team
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="about-section">
+            <div class="container">
+                <div class="about-header">
+                    <h1><i class="fas fa-users" style="color: var(--primary-400);"></i> Our <span class="gradient-text">Team</span></h1>
+                    <p>Meet the team behind the Plant Stress Classification System</p>
+                </div>
+
+                <!-- Project Info Card -->
+                <div class="card animate-on-scroll" style="max-width: 800px; margin: 0 auto 48px; text-align: center;">
+                    <div style="margin-bottom: 20px;">
+                        <span class="hero-badge" style="margin-bottom: 0;">
+                            <i class="fas fa-graduation-cap"></i>
+                            Semester Project — Machine Learning & Data Science
+                        </span>
+                    </div>
+                    <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 12px;">
+                        A Web-Based Plant Stress Level Classification System<br>
+                        <span class="gradient-text">Using Machine Learning Based on Biosensor Data and Chlorophyll Content</span>
+                    </h2>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-top: 16px;">
+                        This project implements three machine learning algorithms — SVM, KNN, and Decision Tree — to classify plant health status from biosensor data. The models are trained with hyperparameter optimization using GridSearchCV and deployed through a modern Serverless API via Vercel.
+                    </p>
+                </div>
+
+                <!-- Team Cards -->
+                <div class="team-grid">
+                    <div class="card team-card animate-on-scroll">
+                        <div class="team-avatar"><i class="fas fa-user"></i></div>
+                        <h3>Johanes Darren Yehuda</h3>
+                        <span class="team-algo">SVM</span>
+                        <p class="team-role">Model Developer</p>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Algorithm: Support Vector Machine</p>
+                    </div>
+                    
+                    <div class="card team-card animate-on-scroll">
+                        <div class="team-avatar"><i class="fas fa-user"></i></div>
+                        <h3>Afrisya Dwiky Mauliddinka</h3>
+                        <span class="team-algo">KNN</span>
+                        <p class="team-role">Model Developer</p>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Algorithm: K-Nearest Neighbors</p>
+                    </div>
+                    
+                    <div class="card team-card animate-on-scroll">
+                        <div class="team-avatar"><i class="fas fa-user"></i></div>
+                        <h3>Muhammad Hafizh Raharja</h3>
+                        <span class="team-algo">Decision Tree</span>
+                        <p class="team-role">Model Developer</p>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Algorithm: Decision Tree</p>
+                    </div>
+                </div>
+
+                <!-- Dataset Info -->
+                <div class="card animate-on-scroll" style="max-width: 800px; margin: 48px auto 0;">
+                    <h3 style="font-family: var(--font-display); margin-bottom: 16px;">
+                        <i class="fas fa-database" style="color: var(--primary-400);"></i> Dataset Information
+                    </h3>
+                    <table class="input-table" style="width: 100%; text-align: left; border-collapse: collapse;">
+                        <tr>
+                            <td style="font-weight: 600; width: 180px; padding: 12px; border-bottom: 1px solid var(--border-glass);">Dataset</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-glass);">Smart Plant Biosensor Monitoring Dataset</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; padding: 12px; border-bottom: 1px solid var(--border-glass);">Source</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-glass);">
+                                <a href="https://www.kaggle.com/datasets/muqaddasejaz/smart-plant-biosensor-monitoring-dataset" target="_blank" style="color: var(--primary-400);">
+                                    Kaggle <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; padding: 12px; border-bottom: 1px solid var(--border-glass);">Rows</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-glass);">1,200</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; padding: 12px; border-bottom: 1px solid var(--border-glass);">Features</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-glass);">14 columns (11 input features + 1 target + Timestamp + Plant_ID)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; padding: 12px; border-bottom: 1px solid var(--border-glass);">Target Variable</td>
+                            <td style="padding: 12px; border-bottom: 1px solid var(--border-glass);">Plant_Health_Status (Healthy, Moderate Stress, High Stress)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="card animate-on-scroll" style="max-width: 800px; margin: 24px auto 0;">
+                    <h3 style="font-family: var(--font-display); margin-bottom: 16px;">
+                        <i class="fas fa-code" style="color: var(--accent-blue);"></i> Technology Stack
+                    </h3>
+                    <div class="card-grid card-grid-2" style="gap: 16px;">
+                        <div style="padding: 16px; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                            <h4 style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 8px;">Machine Learning Backend</h4>
+                            <div class="tech-badges">
+                                <span class="badge">Python</span>
+                                <span class="badge">Scikit-Learn</span>
+                                <span class="badge">Pandas</span>
+                                <span class="badge">NumPy</span>
+                                <span class="badge">Flask API</span>
+                            </div>
+                        </div>
+                        <div style="padding: 16px; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                            <h4 style="color: var(--primary-400); font-size: 0.9rem; margin-bottom: 8px;">Frontend & Deployment</h4>
+                            <div class="tech-badges">
+                                <span class="badge">HTML5</span>
+                                <span class="badge">CSS3</span>
+                                <span class="badge">Vanilla JS</span>
+                                <span class="badge">Vercel Serverless</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 PlantSense AI. Semester Project - Machine Learning & Data Science.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

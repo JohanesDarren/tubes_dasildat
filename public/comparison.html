@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Comparison - PlantSense AI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .table-responsive { overflow-x: auto; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon"><i class="fas fa-leaf"></i></span>
+                <span class="brand-text">PlantSense AI</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a></li>
+                <li><a href="predict.html" class="nav-link">
+                    <i class="fas fa-microscope"></i> Predict
+                </a></li>
+                <li><a href="comparison.html" class="nav-link active">
+                    <i class="fas fa-chart-bar"></i> Comparison
+                </a></li>
+                <li><a href="about.html" class="nav-link">
+                    <i class="fas fa-users"></i> Team
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="comparison-section">
+            <div class="container">
+                <div class="comparison-header">
+                    <h1><i class="fas fa-chart-bar" style="color: var(--primary-400);"></i> Model <span class="gradient-text">Comparison</span></h1>
+                    <p>Performance comparison of SVM, KNN, and Decision Tree classifiers</p>
+                </div>
+
+                <div id="loading" style="text-align: center; padding: 40px;">
+                    <i class="fas fa-circle-notch fa-spin fa-3x" style="color: var(--primary-400);"></i>
+                    <p style="margin-top: 16px;">Loading comparison data...</p>
+                </div>
+
+                <div id="error-message" class="alert alert-danger hidden" style="max-width: 600px; margin: 40px auto; text-align: center;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="error-text">Failed to load comparison data.</span>
+                </div>
+
+                <div id="comparison-content" class="hidden">
+                    <!-- Overall Accuracy Table -->
+                    <div class="comparison-table-wrapper animate-on-scroll">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Author</th>
+                                    <th>CV Accuracy</th>
+                                    <th>Test Accuracy</th>
+                                    <th>Training Time</th>
+                                    <th>Best Parameters</th>
+                                </tr>
+                            </thead>
+                            <tbody id="accuracy-tbody">
+                                <!-- JS Injected -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Per-Class Metrics -->
+                    <h2 style="margin: 48px 0 24px; font-family: var(--font-display);">
+                        Per-Class <span class="gradient-text">Metrics</span>
+                    </h2>
+                    <div id="metrics-container">
+                        <!-- JS Injected Tables -->
+                    </div>
+
+                    <!-- Visualizations -->
+                    <h2 style="margin: 48px 0 24px; font-family: var(--font-display);">
+                        <span class="gradient-text">Visualizations</span>
+                    </h2>
+
+                    <div class="comparison-images" id="images-container">
+                        <!-- Render statically since we copied images to public/results -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 PlantSense AI. Semester Project - Machine Learning & Data Science.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loading = document.getElementById('loading');
+            const errorContainer = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+            const content = document.getElementById('comparison-content');
+            
+            try {
+                const apiUrl = window.location.hostname.includes('vercel.app') 
+                    ? '/api/comparison' 
+                    : 'http://127.0.0.1:5000/api/comparison';
+
+                const res = await fetch(apiUrl);
+                const data = await res.json();
+                
+                if (data.success) {
+                    renderComparison(data);
+                    loading.classList.add('hidden');
+                    content.classList.remove('hidden');
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (err) {
+                console.error(err);
+                loading.classList.add('hidden');
+                errorContainer.classList.remove('hidden');
+                errorText.textContent = err.message || 'Failed to connect to API.';
+            }
+        });
+
+        function renderComparison(data) {
+            const results = data.all_results;
+            
+            // Render Accuracy Table
+            const tbody = document.getElementById('accuracy-tbody');
+            let maxAcc = 0;
+            results.forEach(r => { if(r.test_accuracy > maxAcc) maxAcc = r.test_accuracy; });
+
+            results.forEach(r => {
+                const isBest = r.test_accuracy === maxAcc;
+                const paramStr = Object.entries(r.best_params).map(([k,v]) => `${k}=${v}`).join(', ');
+                
+                tbody.innerHTML += `
+                    <tr>
+                        <td>
+                            <strong>${r.model}</strong>
+                            ${isBest ? '<span style="color: var(--primary-400); font-size: 0.75rem;"> 🏆 Best</span>' : ''}
+                        </td>
+                        <td style="color: var(--text-secondary);">${r.author}</td>
+                        <td class="${isBest ? 'best-value' : ''}">${(r.best_cv_accuracy * 100).toFixed(2)}%</td>
+                        <td class="${isBest ? 'best-value' : ''}">${(r.test_accuracy * 100).toFixed(2)}%</td>
+                        <td>${r.training_time_seconds.toFixed(2)}s</td>
+                        <td><div style="max-width: 250px; font-size: 0.8rem; color: var(--text-muted);">${paramStr}</div></td>
+                    </tr>
+                `;
+            });
+
+            // Render Metrics Tables
+            const metricsContainer = document.getElementById('metrics-container');
+            results.forEach(r => {
+                if (!r.classification_report) return;
+                const report = r.classification_report;
+                const classes = Object.keys(report).filter(k => !['accuracy', 'macro avg', 'weighted avg'].includes(k));
+                
+                let rows = '';
+                classes.forEach(cls => {
+                    rows += `
+                        <tr>
+                            <td><strong>${cls}</strong></td>
+                            <td>${report[cls].precision.toFixed(4)}</td>
+                            <td>${report[cls].recall.toFixed(4)}</td>
+                            <td>${report[cls]['f1-score'].toFixed(4)}</td>
+                            <td>${report[cls].support}</td>
+                        </tr>
+                    `;
+                });
+
+                if (report['weighted avg']) {
+                    rows += `
+                        <tr style="border-top: 2px solid var(--border-glass);">
+                            <td><strong>Weighted Avg</strong></td>
+                            <td><strong>${report['weighted avg'].precision.toFixed(4)}</strong></td>
+                            <td><strong>${report['weighted avg'].recall.toFixed(4)}</strong></td>
+                            <td><strong>${report['weighted avg']['f1-score'].toFixed(4)}</strong></td>
+                            <td><strong>${report['weighted avg'].support}</strong></td>
+                        </tr>
+                    `;
+                }
+
+                metricsContainer.innerHTML += `
+                    <div class="comparison-table-wrapper animate-on-scroll" style="margin-bottom: 24px;">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr><th colspan="5" style="font-size: 0.95rem;">${r.model} — Classification Report</th></tr>
+                                <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>Support</th></tr>
+                            </thead>
+                            <tbody>${rows}</tbody>
+                        </table>
+                    </div>
+                `;
+            });
+
+            // Render Images
+            const imagesContainer = document.getElementById('images-container');
+            const images = [
+                { file: 'model_comparison.png', title: 'Model Comparison Chart' },
+                { file: 'correlation_heatmap.png', title: 'Feature Correlation Heatmap' },
+                { file: 'feature_importance.png', title: 'Feature Importance (F-Score)' },
+                { file: 'feature_distributions.png', title: 'Feature Distributions' },
+                { file: 'class_distribution.png', title: 'Class Distribution' },
+                { file: 'confusion_matrices/svm_confusion_matrix.png', title: 'SVM Confusion Matrix' },
+                { file: 'confusion_matrices/knn_confusion_matrix.png', title: 'KNN Confusion Matrix' },
+                { file: 'confusion_matrices/dt_confusion_matrix.png', title: 'Decision Tree Confusion Matrix' },
+                { file: 'dt_tree_visualization.png', title: 'Decision Tree Visualization' },
+                { file: 'dt_feature_importance.png', title: 'Decision Tree Feature Importance' },
+                { file: 'knn_k_vs_accuracy.png', title: 'KNN: K Value vs Accuracy' },
+            ];
+
+            images.forEach(img => {
+                imagesContainer.innerHTML += `
+                    <div class="card comparison-img-card animate-on-scroll">
+                        <h3><i class="fas fa-chart-area"></i> ${img.title}</h3>
+                        <img src="results/${img.file}" alt="${img.title}" loading="lazy" onerror="this.parentElement.style.display='none'">
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>

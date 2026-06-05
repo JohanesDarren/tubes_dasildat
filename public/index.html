@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web-Based Plant Stress Level Classification System Using Machine Learning">
+    <title>PlantSense AI - Plant Stress Classification</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon"><i class="fas fa-leaf"></i></span>
+                <span class="brand-text">PlantSense AI</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">
+                    <i class="fas fa-home"></i> Home
+                </a></li>
+                <li><a href="predict.html" class="nav-link">
+                    <i class="fas fa-microscope"></i> Predict
+                </a></li>
+                <li><a href="comparison.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i> Comparison
+                </a></li>
+                <li><a href="about.html" class="nav-link">
+                    <i class="fas fa-users"></i> Team
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-seedling"></i>
+                        Machine Learning • Biosensor Data • Classification
+                    </div>
+                    <h1>
+                        Detect <span class="gradient-text">Plant Stress</span><br>
+                        Before It's Too Late
+                    </h1>
+                    <p class="hero-subtitle">
+                        A web-based classification system powered by SVM, KNN, and Decision Tree algorithms.
+                        Analyze biosensor data and chlorophyll content to determine plant health status in real-time.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="predict.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-microscope"></i> Start Prediction
+                        </a>
+                        <a href="comparison.html" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-chart-bar"></i> View Model Comparison
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-icon green"><i class="fas fa-database"></i></div>
+                    <div class="stat-value" data-count="1200">0</div>
+                    <div class="stat-label">Data Points</div>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-icon blue"><i class="fas fa-layer-group"></i></div>
+                    <div class="stat-value" data-count="11">0</div>
+                    <div class="stat-label">Biosensor Features</div>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-icon purple"><i class="fas fa-brain"></i></div>
+                    <div class="stat-value" data-count="3">0</div>
+                    <div class="stat-label">ML Algorithms</div>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-icon orange"><i class="fas fa-tags"></i></div>
+                    <div class="stat-value" data-count="3">0</div>
+                    <div class="stat-label">Stress Classes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It <span class="gradient-text">Works</span></h2>
+                    <p>Our system uses advanced machine learning to classify plant health from biosensor readings</p>
+                </div>
+
+                <div class="card-grid card-grid-3">
+                    <div class="card feature-card animate-on-scroll">
+                        <div class="feature-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--accent-blue);">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h3>1. Input Sensor Data</h3>
+                        <p>Enter your biosensor readings including soil moisture, temperature, pH, nutrient levels, and chlorophyll content into our prediction form.</p>
+                    </div>
+
+                    <div class="card feature-card animate-on-scroll">
+                        <div class="feature-icon" style="background: rgba(139, 92, 246, 0.15); color: var(--accent-purple);">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>2. ML Processing</h3>
+                        <p>Our trained models (SVM, KNN, Decision Tree) analyze your data using optimized hyperparameters and feature-scaled inputs.</p>
+                    </div>
+
+                    <div class="card feature-card animate-on-scroll">
+                        <div class="feature-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--primary-400);">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>3. Get Classification</h3>
+                        <p>Receive an instant classification — Healthy, Moderate Stress, or High Stress — with confidence probabilities for each class.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classification Classes -->
+        <section class="section" style="border-top: 1px solid var(--border-glass);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Stress Level <span class="gradient-text">Classes</span></h2>
+                    <p>The system classifies plants into three health categories</p>
+                </div>
+
+                <div class="card-grid card-grid-3">
+                    <div class="card animate-on-scroll" style="border-top: 3px solid var(--status-healthy);">
+                        <div style="text-align: center;">
+                            <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--status-healthy); margin-bottom: 16px;"></i>
+                            <h3 style="color: var(--status-healthy); margin-bottom: 12px;">Healthy</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                Plant is thriving with optimal biosensor readings. Soil moisture, nutrients, and chlorophyll are within healthy ranges.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card animate-on-scroll" style="border-top: 3px solid var(--status-moderate);">
+                        <div style="text-align: center;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 2.5rem; color: var(--status-moderate); margin-bottom: 16px;"></i>
+                            <h3 style="color: var(--status-moderate); margin-bottom: 12px;">Moderate Stress</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                Early signs of stress detected. Some parameters are deviating from optimal. Intervention recommended.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card animate-on-scroll" style="border-top: 3px solid var(--status-stress);">
+                        <div style="text-align: center;">
+                            <i class="fas fa-times-circle" style="font-size: 2.5rem; color: var(--status-stress); margin-bottom: 16px;"></i>
+                            <h3 style="color: var(--status-stress); margin-bottom: 12px;">High Stress</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                Critical stress levels detected. Significant environmental or nutrient imbalances. Immediate action required.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-icon"><i class="fas fa-leaf"></i></span>
+                    <span class="brand-text">PlantSense AI</span>
+                    <p class="footer-desc">Plant Stress Level Classification System<br>Using Machine Learning Based on Biosensor Data</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="predict.html">Predict</a>
+                    <a href="comparison.html">Model Comparison</a>
+                    <a href="about.html">Our Team</a>
+                </div>
+                <div class="footer-tech">
+                    <h4>Technologies</h4>
+                    <div class="tech-badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">Scikit-Learn</span>
+                        <span class="badge">Flask</span>
+                        <span class="badge">Vercel</span>
+                        <span class="badge">SVM</span>
+                        <span class="badge">KNN</span>
+                        <span class="badge">Decision Tree</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PlantSense AI. Semester Project - Machine Learning & Data Science.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
