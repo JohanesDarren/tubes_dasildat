@@ -1,5 +1,5 @@
 """
-train_dt.py - Decision Tree Model Training (Muhammad Hafizh Raharja)
+train_dt.py - Decision Tree Model Training (Johanes Darren Yehuda)
 =====================================================================
 Decision Tree classifier with:
 - GridSearchCV hyperparameter optimization
@@ -33,7 +33,7 @@ def train_decision_tree():
     """Train Decision Tree model with hyperparameter tuning."""
     print("\n" + "=" * 60)
     print("  DECISION TREE MODEL TRAINING")
-    print("  By: Muhammad Hafizh Raharja")
+    print("  By: Johanes Darren Yehuda")
     print("=" * 60)
 
     # 1. Prepare data
@@ -149,7 +149,7 @@ def train_decision_tree():
     # 10. Save results
     results = {
         'model': 'Decision Tree',
-        'author': 'Muhammad Hafizh Raharja',
+        'author': 'Johanes Darren Yehuda',
         'best_params': {k: str(v) if v is not None else None for k, v in best_params.items()},
         'best_cv_accuracy': round(best_cv_score, 4),
         'test_accuracy': round(test_accuracy, 4),

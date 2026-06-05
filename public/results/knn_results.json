@@ -1,6 +1,6 @@
 {
   "model": "KNN",
-  "author": "Afrisya Dwiky Mauliddinka",
+  "author": "Muhammad Hafizh Raharja",
   "best_params": {
     "metric": "manhattan",
     "n_neighbors": 15,
@@ -42,5 +42,5 @@
       "support": 240.0
     }
   },
-  "training_time_seconds": 2.6
+  "training_time_seconds": 3.0
 }

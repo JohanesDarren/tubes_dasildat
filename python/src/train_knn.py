@@ -1,5 +1,5 @@
 """
-train_knn.py - KNN Model Training (Afrisya Dwiky Mauliddinka)
+train_knn.py - KNN Model Training (Muhammad Hafizh Raharja)
 ==============================================================
 K-Nearest Neighbors classifier with:
 - GridSearchCV hyperparameter optimization
@@ -32,7 +32,7 @@ def train_knn():
     """Train KNN model with hyperparameter tuning."""
     print("\n" + "=" * 60)
     print("  KNN MODEL TRAINING")
-    print("  By: Afrisya Dwiky Mauliddinka")
+    print("  By: Muhammad Hafizh Raharja")
     print("=" * 60)
 
     # 1. Prepare data
@@ -134,7 +134,7 @@ def train_knn():
     # 9. Save results
     results = {
         'model': 'KNN',
-        'author': 'Afrisya Dwiky Mauliddinka',
+        'author': 'Muhammad Hafizh Raharja',
         'best_params': best_params,
         'best_cv_accuracy': round(best_cv_score, 4),
         'test_accuracy': round(test_accuracy, 4),

@@ -1,6 +1,6 @@
 {
   "model": "SVM",
-  "author": "Johanes Darren Yehuda",
+  "author": "Afrisya Dwiky Mauliddinka",
   "best_params": {
     "C": 100,
     "degree": 2,
@@ -42,5 +42,5 @@
       "support": 240.0
     }
   },
-  "training_time_seconds": 20.8
+  "training_time_seconds": 21.3
 }

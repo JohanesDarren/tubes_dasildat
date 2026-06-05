@@ -1,5 +1,5 @@
 """
-train_svm.py - SVM Model Training (Johanes Darren Yehuda)
+train_svm.py - SVM Model Training (Afrisya Dwiky Mauliddinka)
 ==========================================================
 Support Vector Machine classifier with:
 - GridSearchCV hyperparameter optimization
@@ -32,7 +32,7 @@ def train_svm():
     """Train SVM model with hyperparameter tuning."""
     print("\n" + "=" * 60)
     print("  SVM MODEL TRAINING")
-    print("  By: Johanes Darren Yehuda")
+    print("  By: Afrisya Dwiky Mauliddinka")
     print("=" * 60)
 
     # 1. Prepare data
@@ -109,7 +109,7 @@ def train_svm():
     # 8. Save results
     results = {
         'model': 'SVM',
-        'author': 'Johanes Darren Yehuda',
+        'author': 'Afrisya Dwiky Mauliddinka',
         'best_params': best_params,
         'best_cv_accuracy': round(best_cv_score, 4),
         'test_accuracy': round(test_accuracy, 4),

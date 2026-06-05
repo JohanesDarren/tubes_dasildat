@@ -1,6 +1,6 @@
 {
   "model": "Decision Tree",
-  "author": "Muhammad Hafizh Raharja",
+  "author": "Johanes Darren Yehuda",
   "best_params": {
     "criterion": "gini",
     "max_depth": "5",
@@ -89,5 +89,5 @@
       "Importance": 0.0
     }
   ],
-  "training_time_seconds": 2.5
+  "training_time_seconds": 2.6
 }

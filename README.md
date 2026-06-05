@@ -10,9 +10,9 @@ A web application that classifies plant health status (**Healthy**, **Moderate S
 
 | Name | Algorithm |
 |---|---|
-| Johanes Darren Yehuda | SVM (Support Vector Machine) |
-| Afrisya Dwiky Mauliddinka | KNN (K-Nearest Neighbors) |
-| Muhammad Hafizh Raharja | Decision Tree |
+| Afrisya Dwiky Mauliddinka | SVM (Support Vector Machine) |
+| Muhammad Hafizh Raharja | KNN (K-Nearest Neighbors) |
+| Johanes Darren Yehuda | Decision Tree |
 
 ---
 

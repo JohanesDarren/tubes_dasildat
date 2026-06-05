@@ -2,7 +2,7 @@
   "models": [
     {
       "model": "SVM",
-      "author": "Johanes Darren Yehuda",
+      "author": "Afrisya Dwiky Mauliddinka",
       "best_params": {
         "C": 100,
         "degree": 2,
@@ -44,11 +44,11 @@
           "support": 240.0
         }
       },
-      "training_time_seconds": 20.8
+      "training_time_seconds": 21.3
     },
     {
       "model": "KNN",
-      "author": "Afrisya Dwiky Mauliddinka",
+      "author": "Muhammad Hafizh Raharja",
       "best_params": {
         "metric": "manhattan",
         "n_neighbors": 15,
@@ -90,11 +90,11 @@
           "support": 240.0
         }
       },
-      "training_time_seconds": 2.6
+      "training_time_seconds": 3.0
     },
     {
       "model": "Decision Tree",
-      "author": "Muhammad Hafizh Raharja",
+      "author": "Johanes Darren Yehuda",
       "best_params": {
         "criterion": "gini",
         "max_depth": "5",
@@ -183,12 +183,12 @@
           "Importance": 0.0
         }
       ],
-      "training_time_seconds": 2.5
+      "training_time_seconds": 2.6
     }
   ],
   "best_model": {
     "name": "Decision Tree",
     "test_accuracy": 1.0,
-    "author": "Muhammad Hafizh Raharja"
+    "author": "Johanes Darren Yehuda"
   }
 }
