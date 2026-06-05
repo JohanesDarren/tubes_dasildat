@@ -44,7 +44,7 @@
           "support": 240.0
         }
       },
-      "training_time_seconds": 20.1
+      "training_time_seconds": 20.8
     },
     {
       "model": "KNN",
@@ -90,7 +90,7 @@
           "support": 240.0
         }
       },
-      "training_time_seconds": 2.3
+      "training_time_seconds": 2.6
     },
     {
       "model": "Decision Tree",
@@ -183,7 +183,7 @@
           "Importance": 0.0
         }
       ],
-      "training_time_seconds": 2.1
+      "training_time_seconds": 2.5
     }
   ],
   "best_model": {

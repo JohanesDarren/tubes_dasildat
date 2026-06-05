@@ -1,0 +1,13 @@
+{
+  "name": "tubes_dasildat",
+  "version": "1.0.0",
+  "description": "PlantSense AI Web App",
+  "scripts": {
+    "dev": "npx concurrently \"C:/Users/User/AppData/Local/Programs/Python/Python313/python.exe api/index.py\" \"npx serve public -p 3030\"",
+    "install:all": "npm install && pip install -r python/requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "serve": "^14.2.1"
+  }
+}

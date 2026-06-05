@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Determine API URL based on environment (Vercel vs Local)
                 const apiUrl = window.location.hostname.includes('vercel.app') 
                     ? '/api/predict' 
-                    : 'http://127.0.0.1:5000/api/predict';
+                    : 'http://127.0.0.1:5050/api/predict';
 
                 const response = await fetch(apiUrl, {
                     method: 'POST',
