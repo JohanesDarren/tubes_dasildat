@@ -24,7 +24,7 @@ def predict_single_model(model_type, features, feature_names, scaler, le):
         model_map = {
             'svm': 'svm_model.pkl',
             'knn': 'knn_model.pkl',
-            'dt': 'dt_model.pkl'
+            'nn': 'nn_model.pkl'
         }
         if model_type not in model_map:
             return {'success': False, 'error': f'Unknown model type: {model_type}'}
@@ -50,7 +50,7 @@ def predict_single_model(model_type, features, feature_names, scaler, le):
         model_names = {
             'svm': 'Support Vector Machine (SVM)',
             'knn': 'K-Nearest Neighbors (KNN)',
-            'dt': 'Decision Tree'
+            'nn': 'Neural Network (MLP)'
         }
 
         return {
@@ -89,7 +89,7 @@ def predict():
 
         if model_type == 'all':
             results = {}
-            for m in ['svm', 'knn', 'dt']:
+            for m in ['svm', 'knn', 'nn']:
                 results[m] = predict_single_model(m, features, feature_names, scaler, le)
             return jsonify({'success': True, 'predictions': results})
         else:
@@ -111,7 +111,7 @@ def comparison():
             
         # We might also want to send the individual model results for per-class metrics
         all_results = []
-        for model in ['svm', 'knn', 'dt']:
+        for model in ['svm', 'knn', 'nn']:
             result_file = os.path.join(RESULTS_DIR, f'{model}_results.json')
             if os.path.exists(result_file):
                 with open(result_file, 'r') as f2:

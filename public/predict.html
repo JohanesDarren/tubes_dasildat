@@ -57,10 +57,10 @@
                             <div class="form-group">
                                 <label for="model">Select Algorithm</label>
                                 <select id="model" name="model" class="form-control" required>
-                                    <option value="all">Compare All Models (SVM, KNN, Decision Tree)</option>
+                                    <option value="all">Compare All Models (SVM, KNN, Neural Network)</option>
                                     <option value="svm">Support Vector Machine (SVM) - Afrisya</option>
                                     <option value="knn">K-Nearest Neighbors (KNN) - Hafizh</option>
-                                    <option value="dt">Decision Tree - Darren</option>
+                                    <option value="nn">Neural Network (MLP) - Darren</option>
                                 </select>
                             </div>
                         </div>
@@ -70,23 +70,23 @@
                             <div class="form-grid">
                                 <div class="form-group">
                                     <label for="Soil_Moisture">Soil Moisture (%)</label>
-                                    <input type="number" step="any" id="Soil_Moisture" name="Soil_Moisture" class="form-control" placeholder="e.g., 45.2" required>
+                                    <input type="number" step="any" id="Soil_Moisture" name="Soil_Moisture" class="form-control" placeholder="e.g., 35.0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Ambient_Temperature">Ambient Temp (°C)</label>
-                                    <input type="number" step="any" id="Ambient_Temperature" name="Ambient_Temperature" class="form-control" placeholder="e.g., 28.5" required>
+                                    <input type="number" step="any" id="Ambient_Temperature" name="Ambient_Temperature" class="form-control" placeholder="e.g., 25.0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Soil_Temperature">Soil Temp (°C)</label>
-                                    <input type="number" step="any" id="Soil_Temperature" name="Soil_Temperature" class="form-control" placeholder="e.g., 22.1" required>
+                                    <input type="number" step="any" id="Soil_Temperature" name="Soil_Temperature" class="form-control" placeholder="e.g., 22.0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Humidity">Humidity (%)</label>
-                                    <input type="number" step="any" id="Humidity" name="Humidity" class="form-control" placeholder="e.g., 65.0" required>
+                                    <input type="number" step="any" id="Humidity" name="Humidity" class="form-control" placeholder="e.g., 60.0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Light_Intensity">Light Intensity (lux)</label>
-                                    <input type="number" step="any" id="Light_Intensity" name="Light_Intensity" class="form-control" placeholder="e.g., 5000" required>
+                                    <input type="number" step="any" id="Light_Intensity" name="Light_Intensity" class="form-control" placeholder="e.g., 4000" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Soil_pH">Soil pH</label>
@@ -100,7 +100,7 @@
                             <div class="form-grid">
                                 <div class="form-group">
                                     <label for="Nitrogen_Level">Nitrogen (mg/kg)</label>
-                                    <input type="number" step="any" id="Nitrogen_Level" name="Nitrogen_Level" class="form-control" placeholder="e.g., 40.0" required>
+                                    <input type="number" step="any" id="Nitrogen_Level" name="Nitrogen_Level" class="form-control" placeholder="e.g., 35.0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Phosphorus_Level">Phosphorus (mg/kg)</label>
@@ -112,11 +112,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="Chlorophyll_Content">Chlorophyll (SPAD)</label>
-                                    <input type="number" step="any" id="Chlorophyll_Content" name="Chlorophyll_Content" class="form-control" placeholder="e.g., 35.0" required>
+                                    <input type="number" step="any" id="Chlorophyll_Content" name="Chlorophyll_Content" class="form-control" placeholder="e.g., 40.0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="Electrochemical_Signal">Electrochemical Signal (mV)</label>
-                                    <input type="number" step="any" id="Electrochemical_Signal" name="Electrochemical_Signal" class="form-control" placeholder="e.g., 120.5" required>
+                                    <input type="number" step="any" id="Electrochemical_Signal" name="Electrochemical_Signal" class="form-control" placeholder="e.g., 100.0" required>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                         <span class="badge">Vercel</span>
                         <span class="badge">SVM</span>
                         <span class="badge">KNN</span>
-                        <span class="badge">Decision Tree</span>
+                        <span class="badge">Neural Network</span>
                     </div>
                 </div>
             </div>

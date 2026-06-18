@@ -6,189 +6,143 @@
       "best_params": {
         "C": 100,
         "degree": 2,
-        "gamma": 0.01,
+        "gamma": "auto",
         "kernel": "rbf"
       },
-      "best_cv_accuracy": 0.8698,
-      "test_accuracy": 0.8417,
+      "best_cv_accuracy": 0.9092,
+      "test_accuracy": 0.8292,
       "classification_report": {
         "Healthy": {
-          "precision": 0.8545454545454545,
-          "recall": 0.7833333333333333,
-          "f1-score": 0.8173913043478261,
+          "precision": 0.8135593220338984,
+          "recall": 0.8,
+          "f1-score": 0.8067226890756303,
           "support": 60.0
         },
         "High Stress": {
-          "precision": 0.9191919191919192,
-          "recall": 0.91,
-          "f1-score": 0.914572864321608,
+          "precision": 0.9090909090909091,
+          "recall": 0.9,
+          "f1-score": 0.9045226130653267,
           "support": 100.0
         },
         "Moderate Stress": {
-          "precision": 0.7441860465116279,
-          "recall": 0.8,
-          "f1-score": 0.7710843373493976,
+          "precision": 0.7439024390243902,
+          "recall": 0.7625,
+          "f1-score": 0.7530864197530864,
           "support": 80.0
         },
-        "accuracy": 0.8416666666666667,
+        "accuracy": 0.8291666666666667,
         "macro avg": {
-          "precision": 0.8393078067496672,
-          "recall": 0.831111111111111,
-          "f1-score": 0.8343495020062773,
+          "precision": 0.8221842233830658,
+          "recall": 0.8208333333333334,
+          "f1-score": 0.8214439072980145,
           "support": 240.0
         },
         "weighted avg": {
-          "precision": 0.8446950121368725,
-          "recall": 0.8416666666666667,
-          "f1-score": 0.8424479653374257,
+          "precision": 0.8301451889711501,
+          "recall": 0.8291666666666667,
+          "f1-score": 0.8295939009638224,
           "support": 240.0
         }
       },
-      "training_time_seconds": 21.3
+      "training_time_seconds": 40.2
     },
     {
       "model": "KNN",
       "author": "Muhammad Hafizh Raharja",
       "best_params": {
         "metric": "manhattan",
-        "n_neighbors": 15,
+        "n_neighbors": 13,
         "p": 1,
-        "weights": "uniform"
+        "weights": "distance"
       },
-      "best_cv_accuracy": 0.7677,
-      "test_accuracy": 0.7542,
+      "best_cv_accuracy": 0.8217,
+      "test_accuracy": 0.725,
       "classification_report": {
         "Healthy": {
-          "precision": 0.8035714285714286,
-          "recall": 0.75,
-          "f1-score": 0.7758620689655172,
+          "precision": 0.6527777777777778,
+          "recall": 0.7833333333333333,
+          "f1-score": 0.7121212121212122,
           "support": 60.0
         },
         "High Stress": {
-          "precision": 0.8155339805825242,
-          "recall": 0.84,
-          "f1-score": 0.8275862068965517,
+          "precision": 0.8735632183908046,
+          "recall": 0.76,
+          "f1-score": 0.8128342245989305,
           "support": 100.0
         },
         "Moderate Stress": {
-          "precision": 0.6419753086419753,
-          "recall": 0.65,
-          "f1-score": 0.6459627329192547,
+          "precision": 0.6296296296296297,
+          "recall": 0.6375,
+          "f1-score": 0.6335403726708074,
           "support": 80.0
         },
-        "accuracy": 0.7541666666666667,
+        "accuracy": 0.725,
         "macro avg": {
-          "precision": 0.7536935725986428,
-          "recall": 0.7466666666666666,
-          "f1-score": 0.7498036695937745,
+          "precision": 0.7186568752660708,
+          "recall": 0.7269444444444444,
+          "f1-score": 0.7194986031303167,
           "support": 240.0
         },
         "weighted avg": {
-          "precision": 0.7546904519329006,
-          "recall": 0.7541666666666667,
-          "f1-score": 0.7541140144213608,
+          "precision": 0.7370556619838229,
+          "recall": 0.725,
+          "f1-score": 0.7278913541701264,
           "support": 240.0
         }
       },
-      "training_time_seconds": 3.0
+      "training_time_seconds": 1.8
     },
     {
-      "model": "Decision Tree",
+      "model": "Neural Network",
       "author": "Johanes Darren Yehuda",
       "best_params": {
-        "criterion": "gini",
-        "max_depth": "5",
-        "max_features": null,
-        "min_samples_leaf": "1",
-        "min_samples_split": "2"
+        "activation": "tanh",
+        "alpha": "0.0001",
+        "hidden_layer_sizes": "(16, 16, 16)",
+        "learning_rate_init": "0.001",
+        "solver": "adam"
       },
-      "best_cv_accuracy": 0.9969,
-      "test_accuracy": 1.0,
+      "best_cv_accuracy": 0.945,
+      "test_accuracy": 0.9292,
       "classification_report": {
         "Healthy": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1-score": 1.0,
+          "precision": 0.9310344827586207,
+          "recall": 0.9,
+          "f1-score": 0.9152542372881356,
           "support": 60.0
         },
         "High Stress": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1-score": 1.0,
+          "precision": 0.9514563106796117,
+          "recall": 0.98,
+          "f1-score": 0.9655172413793104,
           "support": 100.0
         },
         "Moderate Stress": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1-score": 1.0,
+          "precision": 0.8987341772151899,
+          "recall": 0.8875,
+          "f1-score": 0.8930817610062893,
           "support": 80.0
         },
-        "accuracy": 1.0,
+        "accuracy": 0.9291666666666667,
         "macro avg": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1-score": 1.0,
+          "precision": 0.9270749902178074,
+          "recall": 0.9225,
+          "f1-score": 0.9246177465579116,
           "support": 240.0
         },
         "weighted avg": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1-score": 1.0,
+          "precision": 0.9287768092112233,
+          "recall": 0.9291666666666667,
+          "f1-score": 0.9288063302321764,
           "support": 240.0
         }
       },
-      "feature_importance": [
-        {
-          "Feature": "Soil_Moisture",
-          "Importance": 0.6959378615545306
-        },
-        {
-          "Feature": "Nitrogen_Level",
-          "Importance": 0.3040621384454694
-        },
-        {
-          "Feature": "Ambient_Temperature",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Soil_Temperature",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Humidity",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Light_Intensity",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Soil_pH",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Phosphorus_Level",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Potassium_Level",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Chlorophyll_Content",
-          "Importance": 0.0
-        },
-        {
-          "Feature": "Electrochemical_Signal",
-          "Importance": 0.0
-        }
-      ],
-      "training_time_seconds": 2.6
+      "training_time_seconds": 49.5
     }
   ],
   "best_model": {
-    "name": "Decision Tree",
-    "test_accuracy": 1.0,
+    "name": "Neural Network",
+    "test_accuracy": 0.9292,
     "author": "Johanes Darren Yehuda"
   }
 }

@@ -1,0 +1,47 @@
+{
+  "model": "Neural Network",
+  "author": "Johanes Darren Yehuda",
+  "best_params": {
+    "activation": "tanh",
+    "alpha": "0.0001",
+    "hidden_layer_sizes": "(16, 16, 16)",
+    "learning_rate_init": "0.001",
+    "solver": "adam"
+  },
+  "best_cv_accuracy": 0.945,
+  "test_accuracy": 0.9292,
+  "classification_report": {
+    "Healthy": {
+      "precision": 0.9310344827586207,
+      "recall": 0.9,
+      "f1-score": 0.9152542372881356,
+      "support": 60.0
+    },
+    "High Stress": {
+      "precision": 0.9514563106796117,
+      "recall": 0.98,
+      "f1-score": 0.9655172413793104,
+      "support": 100.0
+    },
+    "Moderate Stress": {
+      "precision": 0.8987341772151899,
+      "recall": 0.8875,
+      "f1-score": 0.8930817610062893,
+      "support": 80.0
+    },
+    "accuracy": 0.9291666666666667,
+    "macro avg": {
+      "precision": 0.9270749902178074,
+      "recall": 0.9225,
+      "f1-score": 0.9246177465579116,
+      "support": 240.0
+    },
+    "weighted avg": {
+      "precision": 0.9287768092112233,
+      "recall": 0.9291666666666667,
+      "f1-score": 0.9288063302321764,
+      "support": 240.0
+    }
+  },
+  "training_time_seconds": 49.5
+}
